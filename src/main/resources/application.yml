@@ -1,0 +1,8 @@
+spring:
+  thymeleaf:
+    cache: false  #禁用掉缓存
+    mode: HTML #渲染的静态页面
+  messages:  #设置常量文字
+    basename: message   #绑定常量属性文件，thymelead可以直接用#{}获取到对应的常量名
+    encoding: utf-8
+

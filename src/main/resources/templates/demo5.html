@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--导入bootstrop样式-->
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.2.1/css/bootstrap.css" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.css}">
+</head>
+<body>
+<!--头部引入-->
+<div th:insert="~{comment :: myhead}"></div>
+
+<h1 th:if="${flag}=='yes'">中公教育</h1>
+<br>
+<!--取反-->
+<h1 th:unless="${flag}=='yes'">中公教育2</h1>
+
+<!--swith多条件选择-->
+<div th:switch="${menu}">
+    <h1 th:case="admin">admin</h1>
+    <h1 th:case="${manager}">manager</h1>
+</div>
+<!--内容和标签一起完完全全插入到div里-->
+<div th:insert="~{comment :: myfool}"></div>
+<!--用里边的标签，不用div标签-->
+<div th:replace="~{comment :: myfool}"></div>
+<!--把里面的标签去掉，用外面的div标签-->
+<div th:include="~{comment :: myfool}"></div>
+</body>
+</html>

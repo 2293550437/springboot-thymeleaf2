@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--日期格式化-->
+<h1 th:text="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"></h1>
+<!--金额的输出,1表当整数为0时保留一位，2表示小数点后几位数-->
+<h2 th:text="${#numbers.formatDecimal(price,1,2)}"></h2>
+
+<!--截取字符转指定位置-->
+<h3 th:text="${#strings.substring(str,0,30)}"></h3>
+
+<!--自动加省略号-->
+<h3 th:text="${#strings.abbreviate(str,30)}"></h3>
+</body>
+</html>
